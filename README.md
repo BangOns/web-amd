@@ -1,9 +1,6 @@
-
 # Web Amd
+
 Dokumentasi website ponpes untuk develop website
-
-
-
 
 ## Dokumentasi
 
@@ -11,6 +8,12 @@ Clone the project
 
 ```bash
   git clone https://github.com/BangOns/web-amd.git
+```
+
+Go to branch dev
+
+```bash
+  git checkout dev
 ```
 
 Go to the project directory fe or be
@@ -31,7 +34,6 @@ Start the server
   npm run dev
 ```
 
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env.local file
@@ -40,11 +42,6 @@ To run this project, you will need to add the following environment variables to
 
 `NEXT_PUBLIC_ID_CHANNEL`
 
-
 ## Tech Stack
 
-**Library and Framework** : Next Js, Typescript, Tailwind CSS, Shadcn UI,Swiper Js, 
-
-
-
-
+**Library and Framework** : Next Js, Typescript, Tailwind CSS, Shadcn UI,Swiper Js,
