@@ -7,9 +7,11 @@ import React from "react";
 export default function NavList_Mobile({
   openPendaftaran,
   className,
+  pathName,
 }: {
   className?: string;
   openPendaftaran: boolean;
+  pathName: string;
 }) {
   return (
     <section className={cn("w-full  pb-3 ", className)}>
@@ -21,7 +23,11 @@ export default function NavList_Mobile({
           >
             <Link
               href={item.link}
-              className="text-lg  text-start text-yellow-200 hover:text-green-400 transition-all "
+              className={`
+                ${
+                  pathName === item.link ? "text-green-400" : "text-yellow-200"
+                } 
+                text-lg  text-start  hover:text-green-400 transition-all `}
             >
               {item.name}
             </Link>

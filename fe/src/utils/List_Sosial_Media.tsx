@@ -16,7 +16,7 @@ export const List_Sosial_Media: IListSosialMedia[] = [
   },
   {
     name: "Jl. Sadar Raya No.34 Rt.03/004 Gudang Baru Kel. Ciganjur Kec. Jagakarsa Jakarta Selatan DKI Jakarta, 12630",
-    link: "/",
+    link: "https://maps.app.goo.gl/SFxmUCfajG5r6tWQA",
     icon: "Map",
   },
 ];

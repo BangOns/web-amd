@@ -7,9 +7,11 @@ import React from "react";
 export default function NavList_Desktop({
   openPendaftaran,
   className,
+  pathName,
 }: {
   className?: string;
   openPendaftaran: boolean;
+  pathName: string;
 }) {
   return (
     <ul
@@ -22,7 +24,9 @@ export default function NavList_Desktop({
         <li key={index}>
           <Link
             href={item.link}
-            className="text-sm text-yellow-200 hover:text-green-400 transition-all "
+            className={` ${
+              pathName === item.link ? "text-green-400" : "text-yellow-200"
+            } text-sm  hover:text-green-400 transition-all `}
           >
             {item.name}
           </Link>

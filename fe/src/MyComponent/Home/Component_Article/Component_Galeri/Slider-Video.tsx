@@ -33,6 +33,7 @@ export default function Slider_Video({
         slidesPerView={PerView !== undefined ? PerView : 1}
         spaceBetween={30}
         loop={true}
+        draggable={true}
         navigation={true}
         modules={[Navigation]}
         className="mySwiper h-full"

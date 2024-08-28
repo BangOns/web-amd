@@ -5,9 +5,9 @@ import HeaderHome from "@/MyComponent/Home/Header-Home";
 
 export default function Home() {
   return (
-    <main className="w-full pt-[77px]">
+    <>
       <HeaderHome />
       <Article_Home />
-    </main>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Header_Title from "./HeaderTitle";
+import Header_Title from "../../Components-All/HeaderTitle";
 import Marquee from "@/components/magicui/marquee";
 import { ImageImport } from "@/utils/ImageImport";
 import Image from "next/image";
@@ -32,7 +32,7 @@ export default async function Galeri_Article() {
           ))}
         </Marquee>
       </section>
-      <section className=" mt-10 w-full lg:h-[450px]">
+      <section className=" mt-10 w-full lg:h-[500px]">
         <Header_SubTitle className="my-2">
           {getLatestVideoYoutube ? "Video Terbaru" : "Video Populer"}
         </Header_SubTitle>
@@ -42,7 +42,7 @@ export default async function Galeri_Article() {
           </Suspense>
         </article>
       </section>
-      <section className="mt-10 w-full h-full">
+      <section className="pt-10 w-full h-full">
         <Header_SubTitle className="my-2">
           {getManyLikesVideo ? "Video Populer" : "Video Lainnya"}
         </Header_SubTitle>

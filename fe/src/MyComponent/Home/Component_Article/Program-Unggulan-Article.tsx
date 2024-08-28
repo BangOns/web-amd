@@ -2,7 +2,7 @@ import { ImageImport } from "@/utils/ImageImport";
 import { ListProgramUnggulan } from "@/utils/ListProgramUnggulan";
 import Image from "next/image";
 import React from "react";
-import Header_Title from "./HeaderTitle";
+import Header_Title from "../../Components-All/HeaderTitle";
 
 export default function Program_Unggulan_Article() {
   return (

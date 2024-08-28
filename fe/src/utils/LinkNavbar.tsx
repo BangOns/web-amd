@@ -4,11 +4,11 @@ export const LinkNav: ILinkNav[] = [
     name: "Beranda",
   },
   {
-    link: "/",
+    link: "/profile",
     name: "Profile",
   },
   {
-    link: "/",
+    link: "/berita",
     name: "Berita",
   },
 ];

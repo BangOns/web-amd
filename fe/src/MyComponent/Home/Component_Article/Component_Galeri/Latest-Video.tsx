@@ -7,7 +7,7 @@ export default async function Latest_Video({ getLatestVideo }: any) {
       <div className=" w-full h-full  md:basis-3/5   ">
         <iframe
           height={400}
-          className="w-full h-[200px] sm:h-[400px] lg:h-full "
+          className="w-full h-[200px] sm:h-[490px]  "
           src={`https://www.youtube.com/embed/${
             getLatestVideo ? getLatestVideo[0].id.videoId : ListIdVideoUtama[0]
           }`}

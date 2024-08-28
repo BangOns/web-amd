@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Navbar />
-        {children}
+        <main className="w-full pt-[77px]">{children}</main>
         <Contact />
         <Footer />
       </body>

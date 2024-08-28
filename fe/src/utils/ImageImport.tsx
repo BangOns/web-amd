@@ -2,6 +2,9 @@ import LogoWithText from "@/assets/img/logo_amd.png";
 import Logo from "@/assets/img/logo_amd_icon.png";
 import ImageProgramUnggulan from "@/assets/img/program-unggulan.png";
 import ImageIklan from "@/assets/img/Infaq-amd.png";
+import PerintisEmaUan from "@/assets/img/uan-ema.png";
+import PerintisAbiAbdullah from "@/assets/img/abi-Abdullah.png";
+import PerintisAyahAbdillah from "@/assets/img/ayah-Abdillah.png";
 //
 import Media1 from "@/assets/img/Galeri-Media/galeri-media1.jpg";
 import Media2 from "@/assets/img/Galeri-Media/galeri-media2.jpg";
@@ -19,6 +22,8 @@ export const ImageImport = {
   Logo,
   ImageProgramUnggulan,
   ImageIklan,
+  PerintisEmaUan,
+  Perintis: [PerintisAbiAbdullah, PerintisAyahAbdillah],
   GalerMedia: [
     Media1,
     Media2,

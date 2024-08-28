@@ -24,6 +24,7 @@ export default function Contact() {
                 href={item.link}
                 className="flex items-center gap-2 "
                 key={index}
+                target="_blank"
               >
                 <Icons name={item.icon as keyof typeof Icons} />
                 <p className="font-anton tracking-wider max-sm:text-sm">
