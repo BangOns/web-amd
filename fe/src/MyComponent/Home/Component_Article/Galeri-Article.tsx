@@ -43,7 +43,7 @@ export default async function Galeri_Article() {
         </article>
       </section>
       <section className="pt-10 w-full h-full">
-        <Header_SubTitle className="my-2">
+        <Header_SubTitle className="my-2" classNameText="text-lg">
           {getManyLikesVideo ? "Video Populer" : "Video Lainnya"}
         </Header_SubTitle>
         <Slider_Video getManyLikesVideo={getManyLikesVideo} />
