@@ -9,7 +9,9 @@ export default async function Latest_Video({ getLatestVideo }: any) {
           height={400}
           className="w-full h-[200px] sm:h-[490px]  "
           src={`https://www.youtube.com/embed/${
-            getLatestVideo ? getLatestVideo[0].id.videoId : ListIdVideoUtama[0]
+            getLatestVideo
+              ? getLatestVideo.items[0]?.id.videoId
+              : ListIdVideoUtama[0]
           }`}
           allowFullScreen
         />
@@ -18,14 +20,18 @@ export default async function Latest_Video({ getLatestVideo }: any) {
         <iframe
           className="h-[200px] sm:h-[400px]  lg:h-full w-full"
           src={`https://www.youtube.com/embed/${
-            getLatestVideo ? getLatestVideo[1].id.videoId : ListIdVideoUtama[1]
+            getLatestVideo
+              ? getLatestVideo.items[1]?.id.videoId
+              : ListIdVideoUtama[1]
           }`}
           allowFullScreen
         />
         <iframe
           className="h-[200px] sm:h-[400px] lg:h-full w-full"
           src={`https://www.youtube.com/embed/${
-            getLatestVideo ? getLatestVideo[2].id.videoId : ListIdVideoUtama[2]
+            getLatestVideo
+              ? getLatestVideo.items[2]?.id.videoId
+              : ListIdVideoUtama[2]
           }`}
           allowFullScreen
         />

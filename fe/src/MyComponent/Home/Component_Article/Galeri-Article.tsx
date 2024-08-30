@@ -15,7 +15,24 @@ import Header_SubTitle from "./Header-SubTitle";
 export default async function Galeri_Article() {
   const getLatestVideoYoutube = await getYoutubeLastVideo();
   const getManyLikesVideo = await GetYoutubeManyLike();
-
+  const plainDataLatestVideoYoutube = {
+    items:
+      getLatestVideoYoutube && getLatestVideoYoutube.items
+        ? getLatestVideoYoutube.items.map((item: any) => ({
+            id: item.id,
+            snippet: item.snippet,
+          }))
+        : [],
+  };
+  const plainDataLikeVideoYoutube = {
+    items:
+      getManyLikesVideo && getManyLikesVideo.items
+        ? getManyLikesVideo.items.map((item: any) => ({
+            id: item.id,
+            snippet: item.snippet,
+          }))
+        : [],
+  };
   return (
     <article className="mt-8 w-full ">
       <Header_Title>Galeri Media</Header_Title>
@@ -37,16 +54,14 @@ export default async function Galeri_Article() {
           {getLatestVideoYoutube ? "Video Terbaru" : "Video Populer"}
         </Header_SubTitle>
         <article className="w-full h-full flex max-lg:flex-col items-center gap-4 justify-center ">
-          <Suspense>
-            <Latest_Video getLatestVideo={getLatestVideoYoutube} />
-          </Suspense>
+          <Latest_Video getLatestVideo={plainDataLatestVideoYoutube} />
         </article>
       </section>
       <section className="pt-10 w-full h-full">
         <Header_SubTitle className="my-2">
           {getManyLikesVideo ? "Video Populer" : "Video Lainnya"}
         </Header_SubTitle>
-        <Slider_Video getManyLikesVideo={getManyLikesVideo} />
+        <Slider_Video getManyLikesVideo={plainDataLikeVideoYoutube} />
       </section>
       <figure className="mt-9 w-full h-full">
         <Image

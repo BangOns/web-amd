@@ -7,8 +7,8 @@ export async function getYoutubeLastVideo() {
         cache: "no-store",
       }
     );
-    const responseJson = await response.json();
-    return responseJson.items;
+    const data = await response.json();
+    return data;
   } catch (error) {
     return error;
   }
@@ -22,8 +22,8 @@ export async function GetYoutubeManyLike() {
         cache: "no-store",
       }
     );
-    const responseJson = await response.json();
-    return responseJson.items;
+    const data = await response.json();
+    return data;
   } catch (error) {
     return error;
   }

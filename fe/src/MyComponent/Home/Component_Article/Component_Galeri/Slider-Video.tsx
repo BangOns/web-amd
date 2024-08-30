@@ -39,12 +39,12 @@ export default function Slider_Video({
         className="mySwiper h-full"
       >
         {getManyLikesVideo ? (
-          getManyLikesVideo.map((video: any, index: number) => (
+          getManyLikesVideo.items.map((video: any, index: number) => (
             <SwiperSlide key={index}>
               <iframe
                 height={400}
                 className="w-full h-[200px] sm:h-[290px]"
-                src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                src={`https://www.youtube.com/embed/${video?.id.videoId}`}
                 allowFullScreen
               />
             </SwiperSlide>
