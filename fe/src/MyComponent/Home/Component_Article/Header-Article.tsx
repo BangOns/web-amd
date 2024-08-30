@@ -19,7 +19,7 @@ export default function Header_Article() {
         </h4>
       </figure>
       <hr />
-      <p className="text-sm  font-roboto text-gray-300">
+      <p className="text-sm  font-roboto text-gray-300 text-center">
         Dengan suatu tekad yang kuat dalam membangun anak bangsa yang mampu
         menjawab permasalahan dimasa mendatang didirikanlah Pondok Pesantren
         Al-Mawaddah Ciganjur tahun 2000, dibawah naungan yayasan baitul rahim
