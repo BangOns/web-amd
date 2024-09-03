@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingVideo from "@/MyComponent/Loading/LoadingVideo";
 import { ListIdVideoRandom } from "@/utils/List_Id_Video_Youtube";
 import React, { useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
@@ -7,8 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Slider_Video({
   getManyLikesVideo,
+  statusVideo,
 }: {
-  getManyLikesVideo: any;
+  getManyLikesVideo: { items: any[] };
+  statusVideo: number;
 }) {
   const [PerView, setPerView] = useState<number | undefined>(undefined);
   useEffect(() => {
@@ -38,29 +41,41 @@ export default function Slider_Video({
         modules={[Navigation]}
         className="mySwiper h-full"
       >
-        {getManyLikesVideo ? (
-          getManyLikesVideo.items.map((video: any, index: number) => (
-            <SwiperSlide key={index}>
-              <iframe
-                height={400}
-                className="w-full h-[200px] sm:h-[290px]"
-                src={`https://www.youtube.com/embed/${video?.id.videoId}`}
-                allowFullScreen
-              />
-            </SwiperSlide>
-          ))
-        ) : (
-          <>
-            {ListIdVideoRandom.map((video: string, index: number) => (
+        {statusVideo === 200 || statusVideo === 400 || statusVideo === 403 ? (
+          getManyLikesVideo.items.length ? (
+            getManyLikesVideo.items.map((video: any, index: number) => (
               <SwiperSlide key={index}>
                 <iframe
                   height={400}
                   className="w-full h-[200px] sm:h-[290px]"
-                  src={`https://www.youtube.com/embed/${video}`}
+                  src={`https://www.youtube.com/embed/${video?.id.videoId}`}
                   allowFullScreen
                 />
               </SwiperSlide>
-            ))}
+            ))
+          ) : (
+            <>
+              {ListIdVideoRandom.map((video: string, index: number) => (
+                <SwiperSlide key={index}>
+                  <iframe
+                    height={400}
+                    className="w-full h-[200px] sm:h-[290px]"
+                    src={`https://www.youtube.com/embed/${video}`}
+                    allowFullScreen
+                  />
+                </SwiperSlide>
+              ))}
+            </>
+          )
+        ) : (
+          <>
+            <SwiperSlide>
+              <LoadingVideo />
+              <LoadingVideo />
+              <LoadingVideo />
+              <LoadingVideo />
+              <LoadingVideo />
+            </SwiperSlide>
           </>
         )}
       </Swiper>

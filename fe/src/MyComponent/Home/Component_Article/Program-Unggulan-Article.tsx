@@ -6,7 +6,7 @@ import Header_Title from "../../Components-All/HeaderTitle";
 
 export default function Program_Unggulan_Article() {
   return (
-    <article className="mt-8 w-full">
+    <article className=" w-full">
       <Header_Title>Program Unggulan</Header_Title>
       <section className="  grid grid-cols-1 md:grid-cols-2  place-content-stretch max-lg:place-items-center mt-5">
         <section className="flex justify-center md:justify-end items-center w-full ">
