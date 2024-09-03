@@ -13,6 +13,12 @@ Clone the project
   git clone https://github.com/BangOns/web-amd.git
 ```
 
+Go to branch dev
+
+```bash
+  git checkout dev
+```
+
 Go to the project directory fe or be
 
 ```bash
