@@ -42,7 +42,7 @@ export default function Slider_Perintis() {
       {ListPerintis.map((items, index) => (
         <SwiperSlide key={index}>
           <figure className="relative w-full flex justify-center items-end">
-            <Image src={items.image} alt="abi-abdullah" width={300} />
+            <Image src={items.image} alt={items.name} width={300} />
             <AnimatePresence>
               {indexSlide === index && (
                 <motion.figcaption

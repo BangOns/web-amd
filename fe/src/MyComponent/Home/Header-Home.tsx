@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeaderHome() {
   return (
-    <header className=" w-full px-1 sm:px-4 max-sm:h-[77vh] max-sm:py-0  max-md:py-44 md:h-[65vh] bg-stone-500/50 text-center space-y-2 flex flex-col justify-center items-center ">
+    <header className=" w-full px-1 sm:px-4 max-sm:h-[77vh] max-sm:py-0  max-md:py-44 md:h-[65vh] text-center space-y-2 flex flex-col justify-center items-center bg-custom-mobile md:bg-custom-tablet lg:bg-custom-desktop bg-cover bg-no-repeat ">
       <h1 className=" font-anton leading-relaxed tracking-widest sm:tracking-[0.2em]  text-4xl sm:text-3xl font-bold text-green_amd">
         SELAMAT DATANG DI
       </h1>

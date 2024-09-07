@@ -3,6 +3,8 @@ import Header_Title from "../Components-All/HeaderTitle";
 import Image from "next/image";
 import { ImageImport } from "@/utils/ImageImport";
 import Slider_Perintis from "./Component_Perintis/Slider-Perintis";
+import { ListPerintis } from "@/utils/ListPerintis";
+import Static_Perintis from "./Component_Perintis/Static-Perintis";
 export default function Perintis_Profile() {
   return (
     <article>
@@ -31,7 +33,12 @@ export default function Perintis_Profile() {
         </figure>
       </section>
       <section className="w-full mt-10 ">
-        <Slider_Perintis />
+        <article className="md:hidden block">
+          <Slider_Perintis />
+        </article>
+        <article className="w-full mt-10 md:flex hidden items-center justify-center gap-20">
+          <Static_Perintis />
+        </article>
       </section>
     </article>
   );
