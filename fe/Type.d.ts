@@ -18,3 +18,18 @@ interface IListPerintis {
   jabatan: string;
   image: StaticImageData;
 }
+
+interface ICatalog {
+  index: number;
+  title?: string;
+  type: "image" | "text";
+  items: string | StaticImageData;
+}
+
+interface IDataBerita {
+  id: number;
+  title: string;
+  created_at: string;
+  author: string;
+  catalog: Array<ICatalog>;
+}

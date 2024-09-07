@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "custom-desktop":
+          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.9),black),url(../assets/img/bg-header.jpg)",
+        "custom-tablet":
+          "radial-gradient(circle at center,transparent,rgba(0, 0, 0, 0.8),black),url(../assets/img/bg-header.jpg)",
+        "custom-mobile":
+          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.6),black),url(../assets/img/bg-header.jpg)",
+      },
       fontFamily: {
         sans: ["sans", "sans-serif"],
         roboto: ["roboto", "sans-serif"],
