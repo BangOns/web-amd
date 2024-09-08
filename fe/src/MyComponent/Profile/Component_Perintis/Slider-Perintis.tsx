@@ -24,11 +24,15 @@ const variants = {
 };
 export default function Slider_Perintis() {
   const [indexSlide, indexSlideSet] = useState(0);
+  const Perintis = [...ListPerintis, ...ListPerintis, ...ListPerintis];
+
   return (
     <Swiper
-      loop={true}
+      loop={Perintis.length > 1}
       spaceBetween={30}
       slidesPerView={1}
+      slidesPerGroup={1}
+      loopAdditionalSlides={0}
       autoplay={{
         delay: 5500,
         disableOnInteraction: false,
@@ -39,10 +43,17 @@ export default function Slider_Perintis() {
       modules={[Autoplay]}
       className="mySwiper w-full h-full "
     >
-      {ListPerintis.map((items, index) => (
+      {Perintis.map((items, index) => (
         <SwiperSlide key={index}>
           <figure className="relative w-full flex justify-center items-end">
-            <Image src={items.image} alt={items.name} width={300} />
+            <Image
+              src={items.image}
+              alt={items.name}
+              width={300}
+              height={0}
+              priority
+              className="h-auto max-sm:w-52 w-auto"
+            />
             <AnimatePresence>
               {indexSlide === index && (
                 <motion.figcaption

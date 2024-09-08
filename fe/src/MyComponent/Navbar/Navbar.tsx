@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className=" w-screen  fixed  border-b-[1px] bg-black border-white z-10">
       <section className="w-full px-4 lg:px-20 py-4 container  items-center mx-auto  flex justify-between">
         <figure className="w-52 ">
-          <Link href={"/"}>
+          <Link href={"/"} aria-label="Beranda">
             <Image
               src={ImageImport?.LogoWithText}
               alt="logo"

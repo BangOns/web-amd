@@ -20,7 +20,8 @@ export default function Perintis_Profile() {
             src={ImageImport.PerintisEmaUan}
             alt="ema-uan"
             width={500}
-            className="max-sm:w-[400px]"
+            height={0}
+            className="max-sm:w-[400px] h-auto w-auto"
           />
           <figcaption className="w-full max-sm:mt-2 text-center font-semibold font-roboto">
             <h1 className="text-base sm:text-xl  text-yellow_amd">

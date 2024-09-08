@@ -15,7 +15,10 @@ export default function Card_Header_Berita() {
     <Card className="bg-gray-800 w-full md:flex gap-2 group">
       <section className="flex gap-2">
         <CardHeader className="flex max-md:w-3/5 flex-col md:space-y-1.5 p-2 sm:p-3 md:p-5 overflow-hidden">
-          <Link href={`/berita/${BeritaNews?.id}`}>
+          <Link
+            href={`/berita/${BeritaNews?.id}`}
+            aria-label={BeritaNews?.title}
+          >
             <Image
               src={
                 HighlightBerita.length && HighlightBerita[0].type === "image"
@@ -29,7 +32,10 @@ export default function Card_Header_Berita() {
         </CardHeader>
         <CardContent className="flex items-center  text-white md:p-3 pt-0  w-full max-md:p-0">
           <section className="max-md:flex max-md:flex-col max-md:justify-center font-roboto  ">
-            <Link href={`/berita/${BeritaNews?.id}`}>
+            <Link
+              href={`/berita/${BeritaNews?.id}`}
+              aria-label={BeritaNews?.title}
+            >
               <h1 className="text-sm md:text-lg font-semibold">
                 {BeritaNews?.title}
               </h1>
@@ -44,6 +50,7 @@ export default function Card_Header_Berita() {
             </p>
             <Link
               href={`/berita/${BeritaNews?.id}`}
+              aria-label={BeritaNews?.title}
               className="text-green_amd text-sm max-md:hidden "
             >
               Selengkapnya {">"}

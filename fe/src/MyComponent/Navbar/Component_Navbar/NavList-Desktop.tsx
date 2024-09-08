@@ -24,6 +24,7 @@ export default function NavList_Desktop({
         <li key={index}>
           <Link
             href={item.link}
+            aria-label={item.name}
             className={` ${
               pathName === item.link ? "text-green-400" : "text-yellow-200"
             } text-sm  hover:text-green-400 transition-all `}
@@ -35,11 +36,13 @@ export default function NavList_Desktop({
       {openPendaftaran && (
         <li>
           <Button
-            className="text-sm text-white bg-green-400 p-2  font-medium hover:bg-green-500 transition-all  outline-none hover:text-white"
+            className="text-sm text-white bg-green-800 p-2  font-medium hover:bg-green-900 transition-all  outline-none hover:text-white"
             asChild
             size={"sm"}
           >
-            <Link href={"/"}>Pendaftaran</Link>
+            <Link href={"/"} aria-label={"pendaftaran"}>
+              Pendaftaran
+            </Link>
           </Button>
         </li>
       )}

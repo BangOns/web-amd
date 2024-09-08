@@ -13,7 +13,10 @@ export default function Card_Rekomendasi({
     <Card className="bg-transparent md:bg-gray-800 w-full md:w-full h-full  md:flex gap-2 group">
       <section className=" flex max-md:flex-col max-md:items-center gap-2 w-full ">
         <CardHeader className="justify-center w-full max-md:max-h-24  md:w-1/3 space-y-0 p-0 md:p-0 overflow-hidden">
-          <Link href={`/berita/${dataBerita?.id}`}>
+          <Link
+            href={`/berita/${dataBerita?.id}`}
+            aria-label={dataBerita?.title}
+          >
             {dataBerita.catalog[0].type === "image" && (
               <Image
                 src={dataBerita.catalog[0].items || ImageImport.GalerMedia[0]}
@@ -25,7 +28,10 @@ export default function Card_Rekomendasi({
         </CardHeader>
         <CardContent className="flex items-center  text-white  p-0">
           <section className="max-md:flex max-md:flex-col max-md:justify-center  max-md:text-center font-roboto px-2 ">
-            <Link href={`/berita/${dataBerita?.id}`}>
+            <Link
+              href={`/berita/${dataBerita?.id}`}
+              aria-label={dataBerita?.title}
+            >
               <h1 className="text-xs md:text-sm lg:text-lg  font-semibold">
                 {dataBerita?.title}
               </h1>

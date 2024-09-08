@@ -3,7 +3,7 @@ import { List_Sosial_Media } from "@/utils/List_Sosial_Media";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Icons from "./Component_Contact/Icons_Props";
+import Icons from "./Component_Contact/Icons-Props";
 
 export default function Contact() {
   return (
@@ -22,6 +22,7 @@ export default function Contact() {
             {List_Sosial_Media.map((item, index) => (
               <Link
                 href={item.link}
+                aria-label={item.name}
                 className="flex items-center gap-2 "
                 key={index}
                 target="_blank"
@@ -42,9 +43,10 @@ export default function Contact() {
             className="w-full"
             height="300"
             allowFullScreen
+            title="Lokasi Pondok Pesantren Al Mawaddah Ciganjur"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </article>
       </section>
     </article>

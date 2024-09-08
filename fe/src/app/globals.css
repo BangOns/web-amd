@@ -67,7 +67,26 @@
     @apply bg-black text-white;
   }
 }
-
+.loaderCard {
+  --c: no-repeat linear-gradient(rgb(133, 132, 131) 0 0);
+  background: var(--c) 0 0, var(--c) 0 50%, var(--c) 0 100%, var(--c) 50% 0,
+    var(--c) 50% 50%, var(--c) 50% 100%, var(--c) 100% 0, var(--c) 100% 50%,
+    var(--c) 100% 100%;
+  background-size: 16px 16px;
+  animation: l31 0.5s infinite alternate;
+}
+@keyframes l31 {
+  0%,
+  20% {
+    width: 45px;
+    height: 45px;
+  }
+  90%,
+  100% {
+    width: 65px;
+    height: 65px;
+  }
+}
 @font-face {
   font-family: "sans";
   src: url(../assets/font/OpenSans-Regular.ttf) format(truetype);

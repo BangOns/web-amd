@@ -17,7 +17,7 @@ export default function Card_Sub_Berita({ data }: { data: IDataBerita }) {
     <Card className="bg-gray-800">
       <section className="max-md:flex gap-2 group">
         <CardHeader className="flex max-md:w-3/5 flex-col md:space-y-1.5 p-2 sm:p-3 md:p-5 overflow-hidden">
-          <Link href={`/berita/${data?.id}`}>
+          <Link href={`/berita/${data?.id}`} aria-label={data?.title}>
             <Image
               src={
                 HighlightBerita.length && HighlightBerita[0].type === "image"
@@ -30,7 +30,7 @@ export default function Card_Sub_Berita({ data }: { data: IDataBerita }) {
           </Link>
         </CardHeader>
         <CardContent className="max-md:flex max-md:flex-col max-md:justify-center font-roboto text-white md:p-3 pt-0 max-md:p-0  w-full ">
-          <Link href={`/berita/${data?.id}`}>
+          <Link href={`/berita/${data?.id}`} aria-label={data?.title}>
             <h1 className="text-xs md:text-lg font-semibold">{data.title}</h1>
           </Link>
           <p className="text-xs  pt-1 text-slate-400 md:hidden block">
@@ -50,7 +50,9 @@ export default function Card_Sub_Berita({ data }: { data: IDataBerita }) {
           variant={"outline"}
           size={"sm"}
         >
-          <Link href={`/berita/${data?.id}`}>Read More</Link>
+          <Link href={`/berita/${data?.id}`} aria-label={data?.title}>
+            Baca Selengkapnya
+          </Link>
         </Button>
       </CardFooter>
     </Card>

@@ -13,7 +13,7 @@ export default function Content_Detail_berita({
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
