@@ -41,7 +41,7 @@ export default function NavList_Mobile({
               asChild
               size={"sm"}
             >
-              <Link href={"/"} aria-label={"pendaftaran"}>
+              <Link href={"/pendaftaran"} aria-label={"pendaftaran"}>
                 Pendaftaran
               </Link>
             </Button>

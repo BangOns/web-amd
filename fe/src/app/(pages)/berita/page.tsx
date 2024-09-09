@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import Header_Berita from "@/MyComponent/Berita/Header-Berita";
-import Terkini_Berita from "@/MyComponent/Berita/Terkini-Berita";
 import Utama_Berita from "@/MyComponent/Berita/Utama-Berita";
 import LoadingNews from "@/MyComponent/Loading/LoadingNews";
+import Terkini_Berita from "@/MyComponent/Berita/Terkini-Berita";
 
 export default function Berita() {
   return (
