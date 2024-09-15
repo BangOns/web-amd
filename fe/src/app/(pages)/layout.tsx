@@ -1,19 +1,9 @@
-import Contact from "@/MyComponent/Footer/Contact";
-import Footer from "@/MyComponent/Footer/Footer";
-
-import Navbar from "@/MyComponent/Navbar/Navbar";
+import Container_LandingPage from "@/MyComponent/Components-All/Container-LandingPage";
 
 export default function PagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow w-full pt-[77px]">{children}</main>
-      <Contact />
-      <Footer />
-    </div>
-  );
+  return <Container_LandingPage>{children}</Container_LandingPage>;
 }

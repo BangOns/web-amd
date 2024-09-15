@@ -3,7 +3,7 @@ import { List_Sosial_Media } from "@/utils/List_Sosial_Media";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Icons from "./Component_Contact/Icons-Props";
+import Icons from "../Components-All/Icons-Props";
 
 export default function Contact() {
   return (
@@ -27,7 +27,10 @@ export default function Contact() {
                 key={index}
                 target="_blank"
               >
-                <Icons name={item.icon as keyof typeof Icons} />
+                <Icons
+                  name={item.icon as keyof typeof Icons}
+                  className="text-green_amd size-[30px]"
+                />
                 <p className="font-anton tracking-wider max-sm:text-sm">
                   {item.name.length > 30
                     ? item.name.slice(0, 40) + "..."

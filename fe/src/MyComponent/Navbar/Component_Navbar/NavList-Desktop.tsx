@@ -20,19 +20,25 @@ export default function NavList_Desktop({
         className
       )}
     >
-      {LinkNav.map((item, index) => (
-        <li key={index}>
-          <Link
-            href={item.link}
-            aria-label={item.name}
-            className={` ${
-              pathName === item.link ? "text-green-400" : "text-yellow-200"
-            } text-sm  hover:text-green-400 transition-all `}
-          >
-            {item.name}
-          </Link>
-        </li>
-      ))}
+      {LinkNav.map((item, index) => {
+        const isActive =
+          item.link === "/"
+            ? pathName === item.link
+            : pathName.includes(item.link);
+        return (
+          <li key={index}>
+            <Link
+              href={item.link}
+              aria-label={item.name}
+              className={` ${
+                isActive ? "text-green-400" : "text-yellow-200"
+              } text-sm  hover:text-green-400 transition-all `}
+            >
+              {item.name}
+            </Link>
+          </li>
+        );
+      })}
       {openPendaftaran && (
         <li>
           <Button

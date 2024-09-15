@@ -5,17 +5,18 @@ import ImageIklan from "@/assets/img/Infaq-amd.png";
 import PerintisEmaUan from "@/assets/img/uan-ema.png";
 import PerintisAbiAbdullah from "@/assets/img/abi-Abdullah.png";
 import PerintisAyahAbdillah from "@/assets/img/ayah-Abdillah.png";
+import BgAdmin from "@/assets/img/bg-admin.png";
 //
-import Media1 from "@/assets/img/Galeri-Media/galeri-media1.jpg";
-import Media2 from "@/assets/img/Galeri-Media/galeri-media2.jpg";
-import Media3 from "@/assets/img/Galeri-Media/galeri-media3.jpg";
-import Media4 from "@/assets/img/Galeri-Media/galeri-media4.jpg";
-import Media5 from "@/assets/img/Galeri-Media/galeri-media5.jpg";
-import Media6 from "@/assets/img/Galeri-Media/galeri-media6.jpg";
-import Media7 from "@/assets/img/Galeri-Media/galeri-media7.jpg";
-import Media8 from "@/assets/img/Galeri-Media/galeri-media8.jpg";
-import Media9 from "@/assets/img/Galeri-Media/galeri-media9.jpg";
-import Media10 from "@/assets/img/Galeri-Media/galeri-media10.jpg";
+import Media1 from "@/assets/img/Galeri-Media/galeri-media1.png";
+import Media2 from "@/assets/img/Galeri-Media/galeri-media2.png";
+import Media3 from "@/assets/img/Galeri-Media/galeri-media3.png";
+import Media4 from "@/assets/img/Galeri-Media/galeri-media4.png";
+import Media5 from "@/assets/img/Galeri-Media/galeri-media5.png";
+import Media6 from "@/assets/img/Galeri-Media/galeri-media6.png";
+import Media7 from "@/assets/img/Galeri-Media/galeri-media7.png";
+import Media8 from "@/assets/img/Galeri-Media/galeri-media8.png";
+import Media9 from "@/assets/img/Galeri-Media/galeri-media9.png";
+import Media10 from "@/assets/img/Galeri-Media/galeri-media10.png";
 
 export const ImageImport = {
   LogoWithText,
@@ -23,6 +24,7 @@ export const ImageImport = {
   ImageProgramUnggulan,
   ImageIklan,
   PerintisEmaUan,
+  BgAdmin,
   Perintis: [PerintisAbiAbdullah, PerintisAyahAbdillah],
   GalerMedia: [
     Media1,
