@@ -18,7 +18,7 @@ export default function Header_Detail_Berita({
       </figure>
       <div className="flex flex-col max-md:flex-col-reverse">
         <h1 className="">{DataBeritaById.title}</h1>
-        <Link href={"/"}>
+        <Link href={"/"} aria-label={"Beranda"}>
           <h2 className="leading-relaxed py-2 text-base text-green_amd">
             Pondok Pesantren Al Mawaddah
           </h2>

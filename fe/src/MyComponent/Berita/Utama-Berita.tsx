@@ -23,7 +23,10 @@ export default function Utama_Berita() {
         />
       </figure>
       <article className="absolute w-full bottom-0 px-4 bg-gradient-to-t from-green-700 from-50%  to-transparent font-semibold font-roboto rounded-b-lg">
-        <Link href={`/berita/${GetDataNewByAdmin?.id}`}>
+        <Link
+          href={`/berita/${GetDataNewByAdmin?.id}`}
+          aria-label={GetDataNewByAdmin?.title}
+        >
           <h1 className="text-xs hover:text-green-200 sm:text-sm md:text-xl lg:text-2xl text-black py-4">
             {GetDataNewByAdmin?.title}
           </h1>

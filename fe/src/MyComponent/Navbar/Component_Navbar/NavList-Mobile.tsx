@@ -22,6 +22,7 @@ export default function NavList_Mobile({
             className="py-5 w-5/6 border-0 border-b-[1px] border-white"
           >
             <Link
+              aria-label={item.name}
               href={item.link}
               className={`
                 ${
@@ -40,7 +41,9 @@ export default function NavList_Mobile({
               asChild
               size={"sm"}
             >
-              <Link href={"/"}>Pendaftaran</Link>
+              <Link href={"/pendaftaran"} aria-label={"pendaftaran"}>
+                Pendaftaran
+              </Link>
             </Button>
           </li>
         )}

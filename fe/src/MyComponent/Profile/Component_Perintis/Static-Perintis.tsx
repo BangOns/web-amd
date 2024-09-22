@@ -8,7 +8,14 @@ export default function Static_Perintis() {
     <Fragment>
       {ListPerintis.map((items, index) => (
         <figure className=" relative" key={index}>
-          <Image src={items.image} alt="perintis" width={300} />
+          <Image
+            src={items.image}
+            alt="perintis"
+            width={300}
+            priority
+            height={0}
+            className="h-auto w-auto"
+          />
           <motion.figcaption
             initial={{
               opacity: 0,

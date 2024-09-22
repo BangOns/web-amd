@@ -2,7 +2,7 @@
 
 import LoadingVideo from "@/MyComponent/Loading/LoadingVideo";
 import { ListIdVideoRandom } from "@/utils/List_Id_Video_Youtube";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -23,7 +23,7 @@ export default function Slider_Video({
       };
       setPerView(window.innerWidth > 768 ? 3 : window.innerWidth > 640 ? 2 : 1);
 
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize, { passive: true });
 
       return () => {
         window.removeEventListener("resize", handleResize);
@@ -41,14 +41,15 @@ export default function Slider_Video({
         modules={[Navigation]}
         className="mySwiper h-full"
       >
-        {statusVideo === 200 || statusVideo === 400 || statusVideo === 403 ? (
-          getManyLikesVideo.items.length ? (
+        <Suspense fallback={<LoadingVideo Total_Loading={5} />}>
+          {getManyLikesVideo.items.length ? (
             getManyLikesVideo.items.map((video: any, index: number) => (
               <SwiperSlide key={index}>
                 <iframe
                   height={400}
                   className="w-full h-[200px] sm:h-[290px]"
                   src={`https://www.youtube.com/embed/${video?.id.videoId}`}
+                  loading="lazy"
                   allowFullScreen
                 />
               </SwiperSlide>
@@ -61,23 +62,14 @@ export default function Slider_Video({
                     height={400}
                     className="w-full h-[200px] sm:h-[290px]"
                     src={`https://www.youtube.com/embed/${video}`}
+                    loading="lazy"
                     allowFullScreen
                   />
                 </SwiperSlide>
               ))}
             </>
-          )
-        ) : (
-          <>
-            <SwiperSlide>
-              <LoadingVideo />
-              <LoadingVideo />
-              <LoadingVideo />
-              <LoadingVideo />
-              <LoadingVideo />
-            </SwiperSlide>
-          </>
-        )}
+          )}
+        </Suspense>
       </Swiper>
     </>
   );

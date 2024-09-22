@@ -1,4 +1,3 @@
-"use client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ImageImport } from "@/utils/ImageImport";
 import Image from "next/image";
@@ -14,7 +13,10 @@ export default function Card_Aside_Rekomendasi({
     <Card className="bg-transparent  w-full   h-full hidden  md:block gap-2 group">
       <section className=" flex flex-col items-center gap-2 w-full ">
         <CardHeader className="justify-center w-full max-h-24   space-y-0 p-0 md:p-0 overflow-hidden">
-          <Link href={`/berita/${dataBerita?.id}`}>
+          <Link
+            href={`/berita/${dataBerita?.id}`}
+            aria-label={dataBerita?.title}
+          >
             <Image
               src={
                 dataBerita && dataBerita.catalog[0].type === "image"
@@ -28,8 +30,11 @@ export default function Card_Aside_Rekomendasi({
         </CardHeader>
         <CardContent className="flex items-center  text-white  p-0">
           <section className="flex flex-col justify-center   font-roboto  ">
-            <Link href={`/berita/${dataBerita?.id}`}>
-              <h1 className="text-xs   ">{dataBerita?.title}</h1>
+            <Link
+              href={`/berita/${dataBerita?.id}`}
+              aria-label={dataBerita?.title}
+            >
+              <h1 className="text-xs">{dataBerita?.title}</h1>
             </Link>
             <p className="text-xs text-slate-400 pt-1 font-light">
               ~{dataBerita.author}~

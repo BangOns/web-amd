@@ -20,11 +20,12 @@ const config = {
     extend: {
       backgroundImage: {
         "custom-desktop":
-          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.9),black),url(../assets/img/bg-header.jpg)",
+          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.9),black),url(../assets/img/bg-header.png)",
         "custom-tablet":
-          "radial-gradient(circle at center,transparent,rgba(0, 0, 0, 0.8),black),url(../assets/img/bg-header.jpg)",
+          "radial-gradient(circle at center,transparent,rgba(0, 0, 0, 0.8),black),url(../assets/img/bg-header.png)",
         "custom-mobile":
-          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.6),black),url(../assets/img/bg-header.jpg)",
+          "radial-gradient(circle at top,transparent,rgba(0, 0, 0, 0.6),black),url(../assets/img/bg-header.png)",
+        "image-login": "url(../assets/img/bg-admin.png)",
       },
       fontFamily: {
         sans: ["sans", "sans-serif"],

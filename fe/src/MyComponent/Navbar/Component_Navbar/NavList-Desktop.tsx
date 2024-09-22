@@ -20,26 +20,35 @@ export default function NavList_Desktop({
         className
       )}
     >
-      {LinkNav.map((item, index) => (
-        <li key={index}>
-          <Link
-            href={item.link}
-            className={` ${
-              pathName === item.link ? "text-green-400" : "text-yellow-200"
-            } text-sm  hover:text-green-400 transition-all `}
-          >
-            {item.name}
-          </Link>
-        </li>
-      ))}
+      {LinkNav.map((item, index) => {
+        const isActive =
+          item.link === "/"
+            ? pathName === item.link
+            : pathName.includes(item.link);
+        return (
+          <li key={index}>
+            <Link
+              href={item.link}
+              aria-label={item.name}
+              className={` ${
+                isActive ? "text-green-400" : "text-yellow-200"
+              } text-sm  hover:text-green-400 transition-all `}
+            >
+              {item.name}
+            </Link>
+          </li>
+        );
+      })}
       {openPendaftaran && (
         <li>
           <Button
-            className="text-sm text-white bg-green-400 p-2  font-medium hover:bg-green-500 transition-all  outline-none hover:text-white"
+            className="text-sm text-white bg-green-800 p-2  font-medium hover:bg-green-900 transition-all  outline-none hover:text-white"
             asChild
             size={"sm"}
           >
-            <Link href={"/"}>Pendaftaran</Link>
+            <Link href={"/pendaftaran"} aria-label={"pendaftaran"}>
+              Pendaftaran
+            </Link>
           </Button>
         </li>
       )}
