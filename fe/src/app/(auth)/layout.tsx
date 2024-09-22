@@ -7,7 +7,7 @@ export default function AuthLayout({
 }>) {
   return (
     <main className=" w-full min-h-screen bg-slate-950 grid place-items-center">
-      <article className="w-full sm:w-11/12 lg:w-3/4 bg-slate-800 rounded-lg flex h-full sm:h-4/5 shadow-lg">
+      <article className="w-full sm:w-11/12 lg:w-3/4 bg-slate-800 rounded-lg flex h-full sm:h-auto shadow-lg">
         {children}
       </article>
     </main>

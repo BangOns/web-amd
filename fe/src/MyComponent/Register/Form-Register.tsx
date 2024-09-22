@@ -7,25 +7,27 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import Icons from "../Components-All/Icons-Props";
 import Link from "next/link";
-import { formSchemaLogin } from "@/utils/SchemaAuth";
+import { formSchemaRegister } from "@/utils/SchemaAuth";
 import Input_Password from "../Components-All/Auth/Input-Password";
+import Input_IdUser from "../Components-All/Auth/Input-IdUser";
 
-type StateForm = z.infer<typeof formSchemaLogin>;
-export default function Form_Login() {
+type StateForm = z.infer<typeof formSchemaRegister>;
+export default function Form_Register() {
   const [showPassword, showPasswordSet] = useState(false);
+  const [showRePassword, showRePasswordSet] = useState(false);
   const form = useForm<StateForm>({
-    resolver: zodResolver(formSchemaLogin),
+    resolver: zodResolver(formSchemaRegister),
     defaultValues: {
       idUser: "",
       password: "",
+      rePassword: "",
     },
   });
 
@@ -45,13 +47,11 @@ export default function Form_Login() {
                   ID <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="432ref"
-                    {...field}
-                    className="bg-transparent text-white outline-none ring-0  focus:ring-0"
-                  />
+                  <Input_IdUser field={field} setValue={form.setValue} />
                 </FormControl>
-
+                <FormDescription className="text-xs">
+                  Mengandung 3 huruf dan 3 angka
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -69,6 +69,27 @@ export default function Form_Login() {
                   <Input_Password
                     showPassword={showPassword}
                     showPasswordSet={showPasswordSet}
+                    field={field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="rePassword"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>
+                  Re-Password
+                  <span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input_Password
+                    showPassword={showRePassword}
+                    showPasswordSet={showRePasswordSet}
                     field={field}
                   />
                 </FormControl>
@@ -95,10 +116,10 @@ export default function Form_Login() {
       </Form>
       <section className="w-full font-roboto text-center text-sm">
         <p>
-          Mau bikin akun?{" "}
+          Sudah Punya akun?{" "}
           <span>
-            <Link href={"/register"} className="text-green_amd underline ">
-              Register Akun
+            <Link href={"/login"} className="text-green_amd underline ">
+              Login
             </Link>
           </span>
         </p>
