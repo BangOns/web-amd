@@ -1,3 +1,4 @@
+import ReactQueryProvider from "@/utils/react-query/Provider";
 import React from "react";
 
 export default function AuthLayout({
@@ -8,7 +9,7 @@ export default function AuthLayout({
   return (
     <main className=" w-full min-h-screen bg-slate-950 grid place-items-center">
       <article className="w-full sm:w-11/12 lg:w-3/4 bg-slate-800 rounded-lg flex h-full sm:h-auto shadow-lg">
-        {children}
+        <ReactQueryProvider>{children}</ReactQueryProvider>
       </article>
     </main>
   );

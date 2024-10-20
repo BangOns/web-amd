@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -17,6 +17,7 @@ import Link from "next/link";
 import { formSchemaRegister } from "@/utils/SchemaAuth";
 import Input_Password from "../Components-All/Auth/Input-Password";
 import Input_IdUser from "../Components-All/Auth/Input-IdUser";
+import { instance } from "@/utils/axios/instance";
 
 type StateForm = z.infer<typeof formSchemaRegister>;
 export default function Form_Register() {
@@ -30,10 +31,10 @@ export default function Form_Register() {
       rePassword: "",
     },
   });
-
   function onSubmit(values: StateForm) {
     console.log(values);
   }
+
   return (
     <section className="w-full space-y-3">
       <Form {...form}>
