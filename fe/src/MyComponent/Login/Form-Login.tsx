@@ -19,10 +19,7 @@ import Input_Password from "../Components-All/Auth/Input-Password";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { instance } from "@/utils/axios/instance";
 import { useRouter } from "next/navigation";
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
+import axios from "axios";
 
 type StateForm = z.infer<typeof formSchemaLogin>;
 export default function Form_Login() {
@@ -36,11 +33,11 @@ export default function Form_Login() {
     },
   });
   const { mutate, isError, error } = useMutation({
-    mutationFn: (data: StateForm) => {
-      return instance.post("/login", data);
+    mutationFn: async (data: StateForm) => {
+      return await axios.post("/api/auth/login", data);
     },
     onSuccess: (data) => {
-      router.push("/dashboard");
+      // router.push("/dashboard");
       console.log("oke data telah masuk", data);
     },
   });
@@ -114,12 +111,7 @@ export default function Form_Login() {
       </Form>
       <section className="w-full font-roboto text-center text-sm">
         <p>
-          Mau bikin akun?{" "}
-          <span>
-            <LoginLink className="text-green_amd underline ">
-              Register Akun
-            </LoginLink>
-          </span>
+          Mau bikin akun? <span>Register Akun</span>
         </p>
       </section>
     </section>

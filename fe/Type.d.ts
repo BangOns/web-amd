@@ -1,3 +1,8 @@
+interface ILogin {
+  idUser: string;
+  password: string;
+}
+
 interface ILinkNav {
   link: string;
   name: string;
