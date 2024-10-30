@@ -13,14 +13,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Icons from "../Components-All/Icons-Props";
 import Link from "next/link";
 import { formSchemaLogin } from "@/utils/SchemaAuth";
 import Input_Password from "../Components-All/Auth/Input-Password";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { instance } from "@/utils/axios/instance";
+import { useRouter } from "next/navigation";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
 type StateForm = z.infer<typeof formSchemaLogin>;
 export default function Form_Login() {
   const [showPassword, showPasswordSet] = useState(false);
+  const router = useRouter();
   const form = useForm<StateForm>({
     resolver: zodResolver(formSchemaLogin),
     defaultValues: {
@@ -28,9 +35,17 @@ export default function Form_Login() {
       password: "",
     },
   });
-
+  const { mutate, isError, error } = useMutation({
+    mutationFn: (data: StateForm) => {
+      return instance.post("/login", data);
+    },
+    onSuccess: (data) => {
+      router.push("/dashboard");
+      console.log("oke data telah masuk", data);
+    },
+  });
   function onSubmit(values: StateForm) {
-    console.log(values);
+    mutate(values);
   }
   return (
     <section className="w-full space-y-3">
@@ -72,19 +87,23 @@ export default function Form_Login() {
                     field={field}
                   />
                 </FormControl>
-
                 <FormMessage />
               </FormItem>
             )}
           />
           <section className="font-roboto">
-            <section className="text-red-500 text-sm "></section>
+            {isError && (
+              <p className="text-sm text-red-500 ">
+                {(error as any).response?.data?.message}
+              </p>
+            )}
             <section className="w-full flex justify-end ">
               <Link href={"/"} className="text-green_amd text-sm">
                 Lupa Password?
               </Link>
             </section>
           </section>
+
           <Button
             type="submit"
             className="w-full bg-green-800 text-white font-roboto hover:bg-green-900"
@@ -97,9 +116,9 @@ export default function Form_Login() {
         <p>
           Mau bikin akun?{" "}
           <span>
-            <Link href={"/register"} className="text-green_amd underline ">
+            <LoginLink className="text-green_amd underline ">
               Register Akun
-            </Link>
+            </LoginLink>
           </span>
         </p>
       </section>
