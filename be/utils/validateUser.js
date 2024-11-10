@@ -8,10 +8,10 @@ function validateUserAdd() {
     .custom(async (value) => {
       const data = await User.findOne({ idUser: value });
       if (data) {
-        throw new Error("user already exist ");
+        throw new Error("id sudah digunakan ");
       }
       if (!Regex.test(value)) {
-        throw new Error("invalid idUser");
+        throw new Error("karakter id masih salah");
       }
       return true;
     });

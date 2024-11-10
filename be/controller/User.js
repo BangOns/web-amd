@@ -20,13 +20,14 @@ async function LoginUser(req, res) {
 }
 async function AddUser(req, res) {
   const validateNewUser = validationResult(req);
+
   if (!validateNewUser.isEmpty()) {
     return Response(
       400,
       {},
       validateNewUser
         .array()
-        .map((x) => x.msg)
+        .map((data) => data.msg)
         .toString(),
       res
     );

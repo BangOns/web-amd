@@ -16,10 +16,10 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { formSchemaLogin } from "@/utils/SchemaAuth";
 import Input_Password from "../Components-All/Auth/Input-Password";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { instance } from "@/utils/axios/instance";
+import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 type StateForm = z.infer<typeof formSchemaLogin>;
 export default function Form_Login() {
@@ -36,9 +36,12 @@ export default function Form_Login() {
     mutationFn: async (data: StateForm) => {
       return await axios.post("/api/auth/login", data);
     },
-    onSuccess: (data) => {
-      // router.push("/dashboard");
-      console.log("oke data telah masuk", data);
+    onSuccess: async (data) => {
+      toast.success("Sukses Login :)");
+      router.push("/dashboard");
+    },
+    onError: (error) => {
+      toast.error((error as any)?.response?.data?.message);
     },
   });
   function onSubmit(values: StateForm) {
@@ -111,7 +114,10 @@ export default function Form_Login() {
       </Form>
       <section className="w-full font-roboto text-center text-sm">
         <p>
-          Mau bikin akun? <span>Register Akun</span>
+          Mau bikin akun?{" "}
+          <Link href={"/register"} className="text-green_amd underline">
+            Register Akun
+          </Link>
         </p>
       </section>
     </section>

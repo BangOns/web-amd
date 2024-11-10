@@ -23,6 +23,9 @@ export const formSchemaRegister = z.object({
     .regex(/^(?=(.*[A-Za-z]){3})(?=(.*[0-9]){3})[A-Za-z0-9]{6}$/, {
       message: "ID harus mengandung tepat 3 huruf dan 3 angka",
     }),
+  name: z.string().min(1, {
+    message: "Username must be at least 1 characters.",
+  }),
   password: z.string().min(8, {
     message: "Username must be at least 8 characters.",
   }),

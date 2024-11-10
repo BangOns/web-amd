@@ -7,9 +7,9 @@ function GenerateToken(req) {
   return token;
 }
 function GenerateRefreshToken(req) {
-  const token = jwt.sign({ id: req.body.idUser }, process.env.REFRESH_KEY, {
+  const token = jwt.sign({ id: req.aud }, process.env.REFRESH_KEY, {
     expiresIn: "7d",
-    audience: req.body.idUser,
+    audience: req.aud,
   });
   return token;
 }
@@ -34,17 +34,23 @@ function VerifyToken(req, res, next) {
   next();
 }
 function VerifyRefreshToken(req, res, next) {
-  const refreshToken = req.headers.cookie.split("=")[1];
-  if (!refreshToken) {
+  const { authorization } = req.headers;
+  if (!authorization) {
     return res.status(403).json({ message: "Refresh token missing" });
   }
-
-  jwt.verify(refreshToken, process.env.REFRESH_KEY, (err, decoded) => {
+  const getToken = authorization.split("=")[1];
+  jwt.verify(getToken, process.env.REFRESH_KEY, (err, decoded) => {
     if (err) {
       return Response(401, {}, "Invalid Refresh Token", res);
     }
-    const token = GenerateToken(req);
-    const refreshToken = GenerateRefreshToken(req);
+
+    const data = {
+      body: {
+        idUser: decoded.aud,
+      },
+    };
+    const token = GenerateToken(data);
+    const refreshToken = GenerateRefreshToken(decoded);
     const dataUser = { ...decoded, token, refreshToken };
     return Response(200, dataUser, "Refresh Token Succes", res);
   });

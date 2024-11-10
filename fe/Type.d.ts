@@ -2,6 +2,12 @@ interface ILogin {
   idUser: string;
   password: string;
 }
+interface IRegister {
+  idUser: string;
+  name: string;
+  password: string;
+  rePassword?: string;
+}
 
 interface ILinkNav {
   link: string;

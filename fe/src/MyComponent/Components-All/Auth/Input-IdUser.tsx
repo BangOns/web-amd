@@ -8,8 +8,6 @@ import { ShuffleIdUser } from "@/helper/ShuffleIdUser";
 type PropsIdUser = {
   setValue: UseFormSetValue<{
     idUser: string;
-    password: string;
-    rePassword: string;
   }>;
   field: ControllerRenderProps<any, any>;
 };

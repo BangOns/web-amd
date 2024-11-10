@@ -4,8 +4,9 @@ const { validateUserAdd } = require("../utils/validateUser");
 const router = require("express").Router();
 
 router.get("/user", VerifyToken, GetUserAll);
+router.post("/user/verifytoken", VerifyToken);
 router.post("/user/login", LoginUser);
 router.post("/user/register", validateUserAdd(), AddUser);
 //
-router.post("/refreshtoken", VerifyRefreshToken);
+router.get("/user/refreshtoken", VerifyRefreshToken);
 module.exports = router;

@@ -8,3 +8,15 @@ export async function LoginFunc({ idUser, password }: ILogin) {
     return { status: error.response.status, data: error.response.data };
   }
 }
+export async function RegisterFunc({ idUser, name, password }: IRegister) {
+  try {
+    const response = await instance.post("/register", {
+      idUser,
+      password,
+      name,
+    });
+    return response.data;
+  } catch (error: any) {
+    return { status: error.response.status, data: error.response.data };
+  }
+}
